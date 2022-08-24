@@ -9,3 +9,12 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.header {
+    font-size: 30px;
+    padding-top: 20px;
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    border: solid;
+}
