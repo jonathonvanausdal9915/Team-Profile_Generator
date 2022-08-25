@@ -24,6 +24,11 @@ prompt([{
         message: 'What is your Engineers Github username?',
         name: 'github',
     },
+    {
+        type: 'input',
+        message: 'Where does your Intern go to school?',
+        name: 'github',
+    },
 
 
 ])
