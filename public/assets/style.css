@@ -3,21 +3,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    border: solid;
 }
 
 .row-2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    border: solid;
+    width: 100%;
 }
 
 .header {
-    font-size: 30px;
-    padding-top: 20px;
+    font-size: 40px;
+    padding-top: 55px;
     text-align: center;
-    height: 100px;
+    height: 200px;
     width: 100%;
     border: solid;
     background-color: rgb(178, 11, 11);
@@ -26,7 +25,7 @@
 
 .body {
     margin: auto;
-    height: 900px;
+    height: 1200px;
     width: 80%;
     border: solid;
 }
@@ -49,30 +48,42 @@
 
 .card-2 {
     position: relative;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 10px 10px;
     border: solid;
+    height: 350px;
+    width: 300px;
+    background-color: whitesmoke;
 }
 
 .card-3 {
     position: relative;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 10px 10px;
     border: solid;
+    height: 350px;
+    width: 300px;
+    background-color: whitesmoke;
 }
 
 .card-4 {
     position: relative;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 10px 10px;
     border: solid;
+    height: 350px;
+    width: 300px;
+    background-color: whitesmoke;
 }
 
 .card-5 {
     position: relative;
-    border-radius: 25px;
+    border-radius: 20px;
     box-shadow: 10px 10px;
     border: solid;
+    height: 350px;
+    width: 300px;
+    background-color: whitesmoke;
 }
 
 .card-layout {
