@@ -30,3 +30,39 @@
     width: 80%;
     border: solid;
 }
+
+.card-header {
+    height: 100px;
+    background-color: rgb(7, 7, 238);
+    color: white;
+}
+
+.card-1 {
+    border-radius: 25px;
+    box-shadow: 10px 10px;
+    border: solid;
+}
+
+.card-2 {
+    border-radius: 25px;
+    box-shadow: 10px 10px;
+    border: solid;
+}
+
+.card-3 {
+    border-radius: 25px;
+    box-shadow: 10px 10px;
+    border: solid;
+}
+
+.card-4 {
+    border-radius: 25px;
+    box-shadow: 10px 10px;
+    border: solid;
+}
+
+.card-5 {
+    border-radius: 25px;
+    box-shadow: 10px 10px;
+    border: solid;
+}
