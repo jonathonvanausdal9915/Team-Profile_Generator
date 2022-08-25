@@ -2,12 +2,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
+    border: solid;
 }
 
 .row-2 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    border: solid;
 }
 
 .header {
@@ -16,5 +19,14 @@
     text-align: center;
     height: 100px;
     width: 100%;
+    border: solid;
+    background-color: rgb(178, 11, 11);
+    color: white;
+}
+
+.body {
+    margin: auto;
+    height: 900px;
+    width: 80%;
     border: solid;
 }
