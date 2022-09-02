@@ -1,3 +1,9 @@
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
+
+
+
 const inquirer = require('inquirer');
 const array = ['Engineer', 'Intern'];
 inquirer.
@@ -85,21 +91,22 @@ prompt([{
     },
 
 
-
-
-
-
-
 ])
 
 .then((answer) => {
-
+    eng = new Engineer(`${answer.engname}`, `${answer.engid}`, `${answer.engemail}`, `${answer.enggithub}`);
+    int = new Intern(`${answer.intname}`, `${answer.intid}`, `${answer.intemail}`, `${answer.intschool}`);
+    man = new Manager(`${answer.mngname}`, `${answer.mngid}`, `${answer.mngemail}`, `${answer.mngoffice}`);
+    console.log(int);
+    console.log(man);
+    console.log(eng);
     console.log(answer);
+
 
 })
 
-http = require('http');
 
+http = require('http');
 
 http.createServer(function(req, res) {
     var html = buildHtml(req);
@@ -112,7 +119,8 @@ http.createServer(function(req, res) {
 }).listen(8080);
 
 function buildHtml(req) {
-    `<!DOCTYPE html>
+    let html =
+        `<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -137,7 +145,7 @@ function buildHtml(req) {
                 <div class="card-layout">
                     <div class="card" style="width: 18rem;">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">ID:</li>
+                            <li class="list-group-item">ID:" + '${man.mngname}' + "</li>
                             <li class="list-group-item">Email:</li>
                             <li class="list-group-item">Office Number:</li>
                         </ul>
@@ -198,7 +206,6 @@ function buildHtml(req) {
                     </div>
                 </div>
             </div>
-            ${GenerateEmployeeCard}
         </div>
 
 
@@ -206,6 +213,6 @@ function buildHtml(req) {
 
 </html>`
 
-
+    return html;
 
 };
