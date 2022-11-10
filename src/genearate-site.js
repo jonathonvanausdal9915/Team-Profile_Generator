@@ -1,4 +1,4 @@
-const generateTeam = (team) => {
+const generateSite = (team) => {
     console.log(team);
     const html = [];
 
