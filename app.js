@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const Intern = require('./src/generate-site.js');
+const Intern = require('./lib/Intern.js');
+const generateSite = require('./src/genearate-site');
 const fs = require("fs");
 const path = require("path");
 const OUTPUT_DIR = path.resolve(__dirname, "output")
@@ -39,7 +40,7 @@ const promptManager = () => {
     })
 };
 const promptMenu = () => {
-    return inquirer.promt([
+    return inquirer.prompt([
         {
             type: 'list',
             name: 'menu',
@@ -85,8 +86,15 @@ const promptEngineer = () => {
         
     ]).then(answers => {
         console.log(answers);
-        const manager = new Manager(answers.name, answers.employeeId, answers.email, answers.officeNumber)
-        teamMembers.push(manager);
+        const engineer = new Engineer(answers.name, answers.employeeId, answers.email, answers.officeNumber)
+        teamMembers.push(engineer);
         promptMenu();
     })
 };
+const buildTeam = () => {
+     if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUT_DIR)
+     }
+     fs.writeFileSync(outputPath, generateSite(teamMembers), 'utf-8');
+}
+promptManager();
