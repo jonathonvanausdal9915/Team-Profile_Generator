@@ -1,20 +1,18 @@
 
 
 const generateManager = function (manager) {
-    return `
-    <div class="col-4 mt-4">
-        <div class="card h-100">
-            <div class="card-header">
-                <h3>${manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">content_paste</i>
-            </div>
-            <div class="card-body">
-                <p class="id">ID: ${manager.id}</p>
-                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number: ${manager.officeNumber}</p>
-            </div>
+    return `<div class="card-2">
+    <h2 class="card-header">Engineer</h2>
+    <div class="card-layout">
+        <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">ID:'${manager.id}'</li>
+                <li class="list-group-item">Email:'${manager.email}'</li>
+                <li class="list-group-item">${manager.github}"Github:</li>
+            </ul>
         </div>
     </div>
+</div>
     `;
 }
 
@@ -101,8 +99,6 @@ generateHTML = (data) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <link href="/dist/style.css" rel="stylesheet">
     </head>
     
@@ -116,7 +112,9 @@ generateHTML = (data) => {
     
     
     </body>
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     </html>
     `;
    }
