@@ -48,7 +48,7 @@ const generateIntern = Intern => {
         </div>
     </div>
 </div>
-`;
+`};
 
 
 generateHTML = (data) => {
@@ -83,6 +83,13 @@ generateHTML = (data) => {
         }
         
     }
+    const employeeCards = pageArray.join('')
+
+    // return to generated page
+    const generateTeam = generateTeamPage(employeeCards); 
+    return generateTeam;
+}
+    const generateTeamPage = function () {
 return html.join('');
    }
 
@@ -115,4 +122,4 @@ return html.join('');
     `;
    }
 
-module.exports = generateHTML; 
+module.exports = generateHTML;
