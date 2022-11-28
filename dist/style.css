@@ -22,8 +22,14 @@
     background-color: rgb(178, 11, 11);
     color: white;
 }
+main {
+display:flex;
+flex-direction: row;
+gap:50px;
+}
 
 .body {
+    
     margin: auto;
     height: 1200px;
     width: 80%;
