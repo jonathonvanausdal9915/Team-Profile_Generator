@@ -1,75 +1,88 @@
-const generateSite = (team) => {
-    console.log(team);
-    const html = [];
 
 
-const generateManager = manager => {
-    console.log(manager);
-    let managerHtml = `
-    <div class="row-1">
-    <div class="card-1">
-        <h2 class="card-header">Manager</h2>
-        <div class="card-layout">
-            <div class="card" style="width: 18rem;">
-            ${manager.name}
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID:${manager.id}</li>a
-                    <li class="list-group-item">Email:${manager.email}</li>
-                    <li class="list-group-item">Office Number:${manager.officeNumber}</li>
-                </ul>
+const generateManager = function (manager) {
+    return `
+    <div class="col-4 mt-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h3>${manager.name}</h3>
+                <h4>Manager</h4><i class="material-icons">content_paste</i>
+            </div>
+            <div class="card-body">
+                <p class="id">ID: ${manager.id}</p>
+                <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
+                <p class="office">Office Number: ${manager.officeNumber}</p>
             </div>
         </div>
     </div>
     `;
-    html.push(managerHtml);
 }
 
 const generateEngineer = engineer => {
-    console.log(engineer);
-    let engineerHtml = `  <div class="card-2">
+    return `  <div class="card-2">
     <h2 class="card-header">Engineer</h2>
     <div class="card-layout">
         <div class="card" style="width: 18rem;">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID:'${engineer.id}'</li>
-                <li class="list-group-item">Email:</li>
-                <li class="list-group-item">Github:</li>
+                <li class="list-group-item">Email:'${engineer.email}'</li>
+                <li class="list-group-item">${engineer.github}"Github:</li>
             </ul>
         </div>
     </div>
 </div>
 `;
-html.push(engineerHtml);
+
 }
-const generateEnginee = Intern => {
-    console.log(Intern);
-    let internHtml = `  <div class="card-2">
+const generateIntern = Intern => {
+    
+    return  `  <div class="card-2">
     <h2 class="card-header">Engineer</h2>
     <div class="card-layout">
         <div class="card" style="width: 18rem;">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID:'${Intern.id}'</li>
-                <li class="list-group-item">Email:</li>
-                <li class="list-group-item">Github:</li>
+                <li class="list-group-item">"${Intern.email}"Email:</li>
+                <li class="list-group-item">${Intern.school}</p>Github:</li>
             </ul>
         </div>
     </div>
 </div>
 `;
-html.push(engineerHtml);
 
-      
-for (let i = 0; i < team.length; i++) {
-    if (team[i].getRole()==="Manager"){
-        generateManager(team[i]);
+
+generateHTML = (data) => {
+
+    // array for cards 
+    pageArray = []; 
+
+    for (let i = 0; i < data.length; i++) {
+        const employee = data[i];
+        const role = employee.getRole(); 
+
+
+        // call manager function
+        if (role === 'Manager') {
+            const managerCard = generateManager(employee);
+
+            pageArray.push(managerCard);
+        }
+
+        // call engineer function
+        if (role === 'Engineer') {
+            const engineerCard = generateEngineer(employee);
+
+            pageArray.push(engineerCard);
+        }
+
+        // call intern function 
+        if (role === 'Intern') {
+            const internCard = generateIntern(employee);
+
+            pageArray.push(internCard);
+        }
+        
     }
-    if (team[i].getRole()==="Engineer"){
-        generateEngineer(team[i]);
-    }
-    if (team[i].getRole()==="Intern"){
-        generateIntern(team[i]);
-    }
-}
 return html.join('');
    }
 
@@ -101,4 +114,5 @@ return html.join('');
     </html>
     `;
    }
-};
+
+module.exports = generateHTML; 
