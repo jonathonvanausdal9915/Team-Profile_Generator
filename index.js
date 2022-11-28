@@ -4,12 +4,12 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
 const generateHTML = require('./src/Generatehtml');
-
+const teamArray = [];
 const fs = require("fs");
 const inquirer = require('inquirer');
 
 
-const teamArray = [];
+
 
 const addManager = () => {
     return inquirer.prompt ([

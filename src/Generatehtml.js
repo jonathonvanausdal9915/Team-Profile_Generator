@@ -111,7 +111,8 @@ generateHTML = (data) => {
             <header class="header">
                 <div>My Team</div>
             </header>
-            <main> <div>${employeeCards}</div></main>
+            <main>${employeeCards}</main>
+            ${employeeCards}
     
     
     </body>
