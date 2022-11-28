@@ -25,4 +25,4 @@ screenshot: ![alt text](assets/images/screenshott.png)
 * Features: n/a
 ## Links:
 * Github link: https://github.com/jonathonvanausdal9915
-* heroku link: 
+* video link:
