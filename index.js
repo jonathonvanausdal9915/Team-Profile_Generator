@@ -3,7 +3,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-const generateHTML = require('./src/generateHTML');
+const generateHTML = require('./src/Generatehtml');
 
 const fs = require("fs");
 const inquirer = require('inquirer');
@@ -181,7 +181,7 @@ const writeFile = data => {
             return;
        
         } else {
-            console.log("Your team profile has been successfully created! Please check out the index.html")
+            console.log("Your team profile has been successfully created!")
         }
     })
 }; 

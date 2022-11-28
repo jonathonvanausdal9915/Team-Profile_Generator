@@ -34,21 +34,22 @@ const generateEngineer = engineer => {
 `;
 
 }
-const generateIntern = Intern => {
+const generateIntern = function (intern) {
     
     return  `  <div class="card-2">
     <h2 class="card-header">Engineer</h2>
     <div class="card-layout">
         <div class="card" style="width: 18rem;">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID:'${Intern.id}'</li>
-                <li class="list-group-item">"${Intern.email}"Email:</li>
-                <li class="list-group-item">${Intern.school}</p>Github:</li>
+                <li class="list-group-item">ID:'${intern.id}'</li>
+                <li class="list-group-item">"${intern.email}"Email:</li>
+                <li class="list-group-item">${intern.school}</p>Github:</li>
             </ul>
         </div>
     </div>
 </div>
-`};
+`
+};
 
 
 generateHTML = (data) => {
@@ -89,11 +90,7 @@ generateHTML = (data) => {
     const generateTeam = generateTeamPage(employeeCards); 
     return generateTeam;
 }
-    const generateTeamPage = function () {
-return html.join('');
-   }
-
-   module.exports = team => {
+    const generateTeamPage = function (employeeCards) {
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -104,6 +101,7 @@ return html.join('');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <link href="/dist/style.css" rel="stylesheet">
     </head>
@@ -113,7 +111,7 @@ return html.join('');
             <header class="header">
                 <div>My Team</div>
             </header>
-            <main> ${generateTeam(team)}</main>
+            <main> <div>${employeeCards}</div></main>
     
     
     </body>
